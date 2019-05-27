@@ -53,8 +53,7 @@ def build_vocabulary_tokenizer(docs_cut):
     for doc_sentence_list in docs_cut:
         for sentence_list in doc_sentence_list:
             for word in sentence_list:
-                if word not in vocabulary:
-                    vocabulary.append(word)
+                vocabulary.append(word)
     tokenizer = keras.preprocessing.text.Tokenizer()
     tokenizer.fit_on_texts([vocabulary])
     return tokenizer
